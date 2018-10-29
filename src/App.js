@@ -1,27 +1,46 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
 
-class App extends Component {
+// Components
+import Home from './components/Home';
+
+// Styles
+import './App.scss';
+import './assets/fonts.scss';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.ready = this.ready.bind(this);
+
+    this.state = {
+      ready: false
+    }
+  }
+
+  componentDidMount () {
+    window.addEventListener('load', this.ready);
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('load', this.ready);
+  }
+
+  ready () {
+    this.setState({ready: true});
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    const {ready} = this.state;
+    if(ready) {
+      return (
+        <Home ready={ready} />
+      );
+    } else {
+      return (
+        <div />
+      )
+    }
   }
 }
 

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/Open\ Sans\ 300.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/Open\ Sans\ 300.ttf');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/Open\ Sans\ 700.ttf');
+    font-style: normal;
+    font-weight: bolder;
+}
+
+html * {
+    font-family: 'Open Sans';
+}
