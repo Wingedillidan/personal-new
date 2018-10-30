@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Components
-import Home from './components/Home';
+import Intro from './components/Intro';
 
 // Styles
 import './App.scss';
@@ -34,7 +34,7 @@ class App extends React.Component {
     const {ready} = this.state;
     if(ready) {
       return (
-        <Home ready={ready} />
+        <Intro ready={ready} />
       );
     } else {
       return (
